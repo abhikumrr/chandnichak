@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Chandni Chowk Wale</title>
+    <meta name="description" content="Explore our complete menu of authentic Old Delhi delicacies.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h3 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .menu-category-subtitle {
+            color: var(--cyan);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            /* Wider columns */
+            gap: 20px 60px;
+            /* More gap between columns */
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: baseline;
+            /* Align text baselines */
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: none;
+            /* Remove default border to use dots */
+        }
+
+        .menu-info {
+            flex-grow: 1;
+            display: flex;
+            align-items: baseline;
+            overflow: hidden;
+        }
+
+        .menu-info h3 {
+            font-family: 'Inter', sans-serif;
+            /* Cleaner font for list */
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text);
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* Dotted leader connection */
+        .menu-info::after {
+            content: "";
+            flex-grow: 1;
+            border-bottom: 1px dotted var(--text-dim);
+            margin: 0 15px;
+            opacity: 0.5;
+            position: relative;
+            top: -4px;
+        }
+
+        .menu-price {
+            flex-shrink: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-info h3 {
+                white-space: normal;
+                /* Allow wrapping on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">CHANDNI <span>CHOWK WALE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#signature">Signature</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact" class="btn btn-primary">Reserve a Table</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <span class="sub-heading">Culinary Dimensions</span>
+                <h1 style="font-size: 4rem;">Full Menu</h1>
+            </div>
+        </section>
+
+        <section class="section-padding container">
+
+            <!-- Beverages -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Beverages</h3>
+                </div>
+
+                <h4 class="menu-category-subtitle">Hot Beverages</h4>
+                <div class="menu-grid" style="margin-bottom: 40px;">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mineral Water</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Masala Chai</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Adrak Chai</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Green Tea (Lemon)</h3>
+                        </div>
+                        <div class="menu-price">₹50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Hot Coffee (Cappuccino)</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Filter Coffee</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Hot Chocolate</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                </div>
+
+                <h4 class="menu-category-subtitle">Cold Beverages</h4>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Fresh Lime Soda</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Lemon Iced Tea</h3>
+                        </div>
+                        <div class="menu-price">₹70</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Peach Iced Tea</h3>
+                        </div>
+                        <div class="menu-price">₹70</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cold Coffee</h3>
+                        </div>
+                        <div class="menu-price">₹130</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cold Coffee with Ice Cream</h3>
+                        </div>
+                        <div class="menu-price">₹300</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Sweet Lassi</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sandwiches -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Sandwiches (Chandni Chowk)</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Coleslaw Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Grilled Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mumbai Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Grilled Cheese Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Grilled Paneer Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Triple Decker Maharaja Sandwich</h3>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Bread Butter Sandwich</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All-Time Snacks -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>All-Time Snacks</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Bread Pakoda</h3>
+                        </div>
+                        <div class="menu-price">₹25</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mirchi Vada</h3>
+                        </div>
+                        <div class="menu-price">₹25</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Pyaz Kachori</h3>
+                        </div>
+                        <div class="menu-price">₹35</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Dal Kachori</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Shahi Samosa</h3>
+                        </div>
+                        <div class="menu-price">₹20</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mix Veg Pakoda</h3>
+                        </div>
+                        <div class="menu-price">₹130</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Paneer Pakoda</h3>
+                        </div>
+                        <div class="menu-price">₹160</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>French Fries</h3>
+                        </div>
+                        <div class="menu-price">₹100</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cheesy French Fries</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Nachos with Cheese</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinese -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Chinese</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Spring Roll</h3>
+                        </div>
+                        <div class="menu-price">₹140</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Fried Rice</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Hakka Noodles</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Chowmein</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Manchurian (Dry/Gravy)</h3>
+                        </div>
+                        <div class="menu-price">₹160 / ₹180</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Chilli Paneer (Dry/Gravy)</h3>
+                        </div>
+                        <div class="menu-price">₹175 / ₹195</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Honey Chilli Potato</h3>
+                        </div>
+                        <div class="menu-price">₹160</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Chinese Bhel</h3>
+                        </div>
+                        <div class="menu-price">₹125</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- South Indian -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>South Indian</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Plain Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mysore Plain Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mysore Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Paneer Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cheese Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Ghee Plain Dosa</h3>
+                        </div>
+                        <div class="menu-price">₹180</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Rava Plain Dosa</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Rava Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price">₹100</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Onion Rava Masala Dosa</h3>
+                        </div>
+                        <div class="menu-price">₹100</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Plain Uttapam</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Mix Veg Uttapam</h3>
+                        </div>
+                        <div class="menu-price">₹170</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Paneer Uttapam</h3>
+                        </div>
+                        <div class="menu-price">₹170</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Idli Sambhar</h3>
+                        </div>
+                        <div class="menu-price">₹120</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Vada Sambhar</h3>
+                        </div>
+                        <div class="menu-price">₹128</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Upma</h3>
+                        </div>
+                        <div class="menu-price">₹120</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chaat Counter -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Chaat Counter</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Pani Puri (6 pcs)</h3>
+                        </div>
+                        <div class="menu-price">₹40</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Sev Puri</h3>
+                        </div>
+                        <div class="menu-price">₹90</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Papdi Chaat</h3>
+                        </div>
+                        <div class="menu-price">₹120</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Samosa Chaat</h3>
+                        </div>
+                        <div class="menu-price">₹130</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Aloo Tikki</h3>
+                        </div>
+                        <div class="menu-price">₹35</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Chole Tikki</h3>
+                        </div>
+                        <div class="menu-price">₹95</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Dahi Bhalla</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Raj Kachori</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continental & Fast Food -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Continental & Fast Food</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Burger Supreme</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Cheese Burger</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Veg Roll</h3>
+                        </div>
+                        <div class="menu-price">₹140 / ₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cheese Garlic Bread</h3>
+                        </div>
+                        <div class="menu-price">₹139</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Quesadilla</h3>
+                        </div>
+                        <div class="menu-price">₹180</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Cheese Baked Corn</h3>
+                        </div>
+                        <div class="menu-price">₹230</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta & Pizza -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Pasta & Pizza</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Pasta Alfredo (White Sauce)</h3>
+                        </div>
+                        <div class="menu-price">₹229</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Pasta Arrabiata (Red Sauce)</h3>
+                        </div>
+                        <div class="menu-price">₹220</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Margherita Pizza</h3>
+                        </div>
+                        <div class="menu-price">₹220</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Garden Fresh Pizza</h3>
+                        </div>
+                        <div class="menu-price">₹220</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shakes & Mocktails -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Shakes & Mocktails</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Vanilla Shake</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Strawberry / Mango Shake</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Chocolate Shake</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Butterscotch Shake</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Virgin Mojito</h3>
+                        </div>
+                        <div class="menu-price">₹125</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Watermelon / Mango Mocktail</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Green Apple / Cranberry Mocktail</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Citrus Punch</h3>
+                        </div>
+                        <div class="menu-price">₹100</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Orange Mocktail</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category">
+                <div class="text-center">
+                    <h3>Desserts</h3>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Brownie with Ice Cream</h3>
+                        </div>
+                        <div class="menu-price">₹120</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Hot Chocolate Fudge</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Falooda Ice Cream</h3>
+                        </div>
+                        <div class="menu-price">₹150</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Gulab Jamun</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Jalebi</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Lachha Rabdi (per glass)</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Sitafal ki Rabdi (Seasonal)</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h3>Khoya Mohan Special</h3>
+                        </div>
+                        <div class="menu-price"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chandni Chowk Wale. All Rights Reserved. Crafted with Heritage.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
