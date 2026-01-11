@@ -1,16 +1,19 @@
 :root {
-    --gold: #3f4650;
-    --gold-light: #E0C08D;
-    --bg-deep: #080808;
-    --bg-main: #0F0F0F;
-    --bg-accent: #161616;
+    --accent: #7c4dff;
+    /* Modern Violet */
+    --accent-glow: rgba(124, 77, 255, 0.4);
+    --cyan: #00e5ff;
+    --gold: #d4af37;
+    --bg-dark: #0a0a0b;
+    --bg-main: #0a0a0b;
+    --bg-card: #141417;
+    --text: #ffffff;
+    --text-dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass: rgba(255, 255, 255, 0.03);
     --black: #000000;
-    --surface: rgba(124, 127, 110, 0.8);
-    --text: #131106;
-    --text-dim: #120101;
-    --border-color: rgba(170, 167, 162, 0.2);
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --glass: rgba(8, 8, 8, 0.95);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -22,12 +25,10 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color:rgb(124, 124, 124);
+    background-color: var(--bg-dark);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
-    /* Subtle atmospheric texture */
 }
 
 h1,
@@ -65,12 +66,12 @@ ul {
 
 .sub-heading {
     display: block;
-    color: var(--gold);
+    color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
 }
 
 .section-title h2 {
@@ -104,29 +105,31 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--gold);
-    color: var(--black);
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 15px var(--accent-glow);
 }
 
 .btn-primary:hover {
-    background-color: var(--gold-light);
+    background: var(--accent);
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--accent-glow);
 }
 
 .btn-gold {
-    background-color: var(--gold);
-    color: var(--black);
+    background: #fff;
+    color: #000;
 }
 
 .btn-outline {
     background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
+    border: 1px solid var(--border);
+    color: #fff;
 }
 
 .btn-outline:hover {
-    background: var(--gold);
-    color: var(--black);
+    background: #fff;
+    color: #000;
 }
 
 /* --- Header & Nav --- */
@@ -163,7 +166,7 @@ nav {
     display: block;
     font-size: 0.8rem;
     letter-spacing: 5px;
-    color: var(--gold);
+    color: var(--accent);
 }
 
 .nav-links {
@@ -178,7 +181,7 @@ nav {
 }
 
 .nav-links a:hover:not(.btn) {
-    color: var(--gold);
+    color: var(--accent);
 }
 
 /* --- Hero Section --- */
@@ -213,12 +216,12 @@ nav {
 .hero-decoration {
     width: 80px;
     height: 2px;
-    background: var(--gold);
+    background: var(--accent);
     margin-bottom: 30px;
 }
 
 .hero h4 {
-    color: var(--gold);
+    color: var(--accent);
     font-size: 1.1rem;
     letter-spacing: 8px;
     margin-bottom: 20px;
@@ -234,7 +237,7 @@ nav {
 }
 
 .hero h1 span {
-    color: var(--gold);
+    color: var(--accent);
     font-style: italic;
 }
 
@@ -264,7 +267,7 @@ nav {
     writing-mode: vertical-rl;
     font-size: 0.8rem;
     letter-spacing: 3px;
-    color: var(--gold);
+    color: var(--accent);
 }
 
 .scroll-indicator .line {
@@ -292,7 +295,7 @@ nav {
 }
 
 .read-more {
-    color: var(--gold);
+    color: var(--accent);
     font-weight: 600;
     margin-top: 10px;
     display: inline-block;
@@ -312,6 +315,30 @@ nav {
     z-index: 1;
 }
 
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat h3 {
+    color: var(--accent);
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat:nth-child(2) h3 {
+    color: var(--cyan);
+}
+
+.stat p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 0 !important;
+}
+
 /* --- Signature Dishes --- */
 .dark-section {
     background-color: var(--bg-main);
@@ -322,19 +349,21 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 50px;
+    perspective: 1000px;
 }
 
 .signature-card {
-    background: var(--bg-accent);
-    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
     overflow: hidden;
-    transition: var(--transition);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
 }
 
 .signature-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
+    border-color: var(--accent);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .card-img {
@@ -359,7 +388,7 @@ nav {
 
 .card-content h3 {
     margin-bottom: 15px;
-    color: var(--gold);
+    color: var(--accent);
     font-size: 1.5rem;
 }
 
@@ -396,7 +425,7 @@ nav {
 }
 
 .menu-price {
-    color: var(--gold);
+    color: var(--accent);
     font-weight: 600;
 }
 
@@ -421,7 +450,7 @@ nav {
 }
 
 .info-item i {
-    color: var(--gold);
+    color: var(--accent);
     font-size: 1.2rem;
     margin-top: 5px;
 }
@@ -439,20 +468,21 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gold);
+    color: var(--accent);
 }
 
 .social-links a:hover {
-    background: var(--gold);
+    background: var(--accent);
     color: var(--black);
 }
 
 .booking-form {
-    background: var(--bg-deep);
+    background: var(--glass);
     padding: 50px;
-    border: 1px solid var(--gold);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
 }
 
 .booking-form h3 {
@@ -485,7 +515,7 @@ textarea {
 input:focus,
 select:focus {
     outline: none;
-    border-color: var(--gold);
+    border-color: var(--accent);
 }
 
 /* --- Footer --- */
@@ -524,7 +554,7 @@ footer {
     .mobile-menu-btn span {
         width: 30px;
         height: 2px;
-        background: var(--gold);
+        background: var(--accent);
         transition: var(--transition);
     }
 
